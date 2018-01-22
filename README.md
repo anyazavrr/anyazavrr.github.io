@@ -1,1 +1,1 @@
-# anyazavrr.githuh.io
+# anyazavrr.github.io
