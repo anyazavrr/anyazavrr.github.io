@@ -8,6 +8,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы    
+        PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+        $("#popup1").hide();
+    }
+</script>
 
 	</head>
 
@@ -30,7 +45,7 @@ font-style: normal;
 
 #menu{
 	text-align: center;
-
+	visibility: hidden;
 }
 #link{
 	visibility: hidden;
@@ -46,7 +61,9 @@ font-style: normal;
   margin-right: 30px;
   text-align: left;
  }
-
+#navbar{
+	visibility: hidden;
+}
 #title{
     margin-left: -100px;
     text-align: center;
@@ -76,11 +93,101 @@ footer{
 	background: #2B2B2B;
 
 }
+#adapt{
+visibility: visible;
+
+
+}
+
 	}
+
+}
+.b-container{
+    position: absolute;
+width: 502px;
+height: 435px;
+left: 261px;
+top: 788px;
+
+background: #FFFFFF;
+border-radius: 10px;
+}
+.b-popup{
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    margin:40px auto 0px auto;
+   
+width: 502px;
+height: 435px;
+left: 261px;
+top: 788px;
+
+background: #FFFFFF;
+border-radius: 10px;
+    
+    box-shadow: 0px 0px 10px #000;
+}
 
 	body{
 		font-family: Proxima Nova Rg;
+
 	}
+	ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+ul.menu > li {
+    float: left;
+    position: relative;
+}
+ul.menu > li > a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    
+    text-decoration: none;
+}
+ul.menu > li > a:hover {
+    background-color: black;
+}
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: 37px;
+    left: 0;
+    background-color: white;
+    }
+ul.submenu > li {
+    display: block;
+}
+ul.submenu > li > a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    background-color:#fff;
+    text-decoration: none;
+}
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+}
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}
 	#menu{
 		font-size: 12px;
 		
@@ -165,8 +272,12 @@ footer{
 		background-color:#F5FDFF;
 		height: 353px;
 	}
+	#about2{
+		height: 353px;
+	}
 	#last{
-		background: linear-gradient(180deg, rgba(56, 60, 79, 0.51) 6.89%, rgba(84, 84, 84, 0) 36.01%), linear-gradient(0deg, rgba(69, 65, 107, 0.3), rgba(69, 65, 107, 0.3)),  url(2.jpg);
+		background: linear-gradient(180deg, rgba(56, 60, 79, 0.51) 6.89%, rgba(84, 84, 84, 0) 36.01%), linear-gradient(0deg, rgba(69, 65, 107, 0.3), rgba(69, 65, 107, 0.3)), 
+		 url(2.jpg);
 		transform: matrix(-1, 0, 0, 1, 0, 0);
 		background-size: cover;
 		height: 650px;
@@ -181,13 +292,15 @@ footer{
 		margin-top: 22px; color: #000; font-size: 18px;
 	}
 	#parts{
-		font-size: 24px; margin-top: 25px; color: #000;
+		font-size: 24px;
+		 margin-top: 27px;
+		  color: #000;
 	}
 	#ptext{
 		font-size: 14px;
 		color: #000;
 		
-		height: 118px;
+		
 		font-family: Proxima Nova Rg1;
 	}
 	#link{
@@ -195,11 +308,68 @@ footer{
 		 text-align: right; 
 		font-family: Proxima Nova Rg1;
 	}
+	#adapt{
+				position: absolute;
+	}
+	#navbar{
+		height: 59px; 
+		background-color: #fff
+	}
+	#item{
+		
+		width: 241px;
+        height: 286px;
+       	background-size: cover;
+        background-image: url(Notsleeping_black.jpg);
+        background-position: center;
+
+	}
+	.color{
+		width: 15px;
+		height: 15px;
+		border-radius: 7.5px;
+		float: left;
+		margin-right: 8px;
+
+	}
+	#red{
+		background-color: #D44A4A;
+		margin-left: 80px;
+	}
+	#blue{
+		background: #4260AD;
+	}
+	#white{
+		border: 1px solid #000000;
+		background-color: #fff;
+	}
+	#grey{
+		background: #828282;
+	}
 </style>
 </head>
 <body>
+
 	<div class="row" id="main" style="height: 750px;">
-		<div class="row" style="height: 59px; background-color: #fff;">
+ 
+    <div id="adapt" style="margin-left: 20px; border-radius: 3px;">	
+		
+    	<ul class="menu">
+    <li><a href=#><i class="glyphicon glyphicon-menu-hamburger" style="font-size: 35px; color:#000; background-color: #fff; padding: 5px;border-radius: 3px;  "></i> </a>
+	        <ul class="submenu">
+	            <li><a href=#>Главная</a></li>
+	            <li><a href=#>Продукция</a></li>
+	            <li><a href=#>О нас</a></li>
+	        </ul>
+	    </li>
+	    
+	    </li>
+	     </ul>
+	</div>
+
+
+
+		<div class="row"  id ="navbar">
 	<div class="col-md-3" id="menu">
 		<div class="col-md-6" >
 			
@@ -261,28 +431,68 @@ footer{
 </div>
 <div class="row" id="about">
 	<center><div id="parts">ПРИНЦИПЫ НАШЕЙ РАБОТЫ</div></center>
-	<div class="row" style="margin-top: 35px;height: 111px; background-color: red">
-		<div class="col-md-4" style="background-color: pink;">
+	<div class="row" style="margin-top: 35px;height: 111px;">
+		<div class="col-md-4">
 			<div class="col-md-6"></div>
 			<div class="col-md-6">
 				<center><div><img  src="Ellipse.png"/>
 		<p id="ptitles"> Высокое качество<br></p><p id="ptext"> Продукция нашего магазина отвечает высоким критериям качества.</p></div></center></div>
 
 	</div>
-		<div class="col-md-4"><div  style="background-color: yellow;"></div>
-		<center><div style=" background-color: purple;"><img   src="Ellipse.png"/><p id="ptitles">Быстрая готовность</p><p id="ptext">В течение суток заказ будет готов. Вам остаётся только забрать покупки в удобное для вас время. </p></div></center><div class="col-md-4" style="background-color: green;"></div></div>
-		<div class="col-md-4" style="background-color:  blue;">
+		<div class="col-md-4"><div></div>
+		<center><div><img   src="Ellipse.png"/><p id="ptitles">Быстрая готовность</p><p id="ptext">В течение суток заказ будет готов. Вам остаётся только забрать покупки в удобное для вас время. </p></div></center></div>
+		<div class="col-md-4">
 			<div class="col-md-6"><center><div><img  src="Ellipse.png"/><p id="ptitles">Удобное получение</p><p id="ptext">Получить заказ можно в антикафе "Розетка и Кофе". Оно находится в 5 минутах ходьбы от главного корпуса Вышки на Мясницкой.</p></div></center></div>
 		</div>
 	
-	
+	</div>
 </div>
-</div>
-<div class="row" style="height: 699px;">
+
+<div class="row" style="height: 730px; margin-top: 25px; position: relative;">
      <!--НАША ПРОДУКЦИЯ-->
-	
+      	<center><div id="parts">НАША ПРОДУКЦИЯ</div></center>
+
+
+ 
+<div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+        Text in Popup
+    <a href="javascript:PopUpHide()">Hide popup</a>
+    </div>
 </div>
-<div class="row" id="last">
+
+
+      	<div class="row" style="margin-top: 35px;height: 72px;">
+		<div class="col-md-4">
+			<div class="col-md-6"></div>
+			<div class="col-md-6">
+				<center><div>
+		<p id="ptitles"> Футболка<br></p><img  src="Ellipse.png"/><p id="ptext">1100</p>
+		<div id="item" style="padding-top: 242px;" >
+			<div class="b-container" style="width: 241px;
+				height: 44px;background: rgba(255, 255, 255, 0.9); font-family: Proxima Nova Rg1; font-size: 14px;"><a href="javascript:PopUpShow()">ЗАКАЗАТЬ</a></div>
+		</div>
+<p id="ptitles">Not Sleeping</p><p style="font-family: Proxima
+		Nova Rg1; font-size: 14px;color: #828282;">Размеры XS, S, M, L, XL </p></div></center></div>
+
+	</div>
+		<div class="col-md-4"><div></div>
+		<center><div><p id="ptitles">Свитшот</p><img   src="Ellipse.png"/><p id="ptext">1700 </p><div id="item" ></div><p id="ptitles">HSE<br></p>
+			<div class="row" style="height: 19px;width: 241px;"><div class="color" id="red"></div><div class="color" id="blue"></div><div class="color" id="white"></div><div class="color" id="grey"></div></div><br>
+			<p style="font-family: Proxima
+		Nova Rg1; font-size: 14px;color: #828282;">Размеры XS, S, M, L, XL </p></div></center></div>
+		<div class="col-md-4">
+			<div class="col-md-6"><center><div><p id="ptitles">Толстовка</p><img  src="Ellipse.png"/><p id="ptext">2100</p><div id="item" ></div></div></center></div>
+		</div>
+	
+	</div>
+	
+		
+	</div>
+ </div>
+	
+
+<div class="row" id="last" style="position: relative;">
 	<div style="width: 686px; height: 650px; align-items: right; background: linear-gradient(89.81deg, rgba(13, 12, 12, 0.95) 2.29%, rgba(41, 41, 41, 0) 88.29%); 
 	"></div>
 </div>
@@ -313,4 +523,8 @@ footer{
 		</div>
 	</footer>
 </div>
+
+
+
+
 </body>
